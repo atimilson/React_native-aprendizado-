@@ -1,0 +1,23 @@
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import {View, Text, Image} from 'react-native';
+import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer';
+
+export default function Custom(props){
+    return(        
+        <DrawerContentScrollView {...props} >  
+           <View 
+           style={{ width: '100%', height: 77,
+           alignItems: 'center' , justifyContent: 'center',
+           marginTop: 15}} >
+               <StatusBar />
+               <Image 
+                source={require('../../assets/perfil.png')}
+                style={{ width: 65, height: 65}}
+               />
+               <Text style={{color: '#000', fontSize:17, marginTop:5, marginBottom:25}}>Bem vindo!</Text>
+            </View>         
+           <DrawerItemList {...props}/>  
+        </DrawerContentScrollView>
+    );
+}
